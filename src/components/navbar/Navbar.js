@@ -5,6 +5,7 @@ import {
   InfobarWrapper,
   InputWrapper,
   Logo,
+  MenuIconsContainer,
   NavbarContainer,
 } from "./navbarStyled";
 
@@ -13,14 +14,16 @@ const Navbar = () => {
     <Container>
       <InfobarWrapper>
         {" "}
-        Mobile App Version is Under Development Cheerio ;D
+        This is not only tokopedia clone but 70% all tokopedia functionality is
+        work fine and the rest is ongoing development :D
       </InfobarWrapper>
       <NavbarContainer>
         <Logo>
-          <span>{"</Fake>"}</span>
+          {/* <span>{"</Fake>"}</span> */}
           <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" />
         </Logo>
-        <InputWrapper></InputWrapper>
+        <InputWrapper />
+        <MenuIconsContainer />
       </NavbarContainer>
     </Container>
   );

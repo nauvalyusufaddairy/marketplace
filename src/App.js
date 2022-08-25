@@ -1,14 +1,14 @@
+import Products from "./components/product/Products";
 import logo from "./logo.svg";
-
-import Navbar from "./components/navbar/Navbar";
-import Test from "./Test";
+import Home from "./pages/home/Home";
+// import "./App.css";
+import Product from "./test/Product";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      {/* <Test /> */}
-    </div>
+    <>
+      <Home />
+    </>
   );
 }
 

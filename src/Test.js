@@ -1,31 +1,30 @@
-import { style } from "@mui/system";
-import styled from "styled-components";
-
-const Container = styled.div`
-  width: 30px;
-  height: 10px;
-  background-color: red;
-  display: flex;
-  flex-direction: column;
-`;
-const Wrapper = styled.div`
-  margin: 20px;
-  width: 20px;
-  height: 20px;
-  background-color: blue;
-  &:hover > ${Container} {
-    background-color: black;
-  }
-  &:hover {
-    background-color: black;
-  }
-`;
+import React from "react";
+import { useRef } from "react";
 
 const Test = () => {
+  const initial = {
+    count: 0,
+  };
+  const counter = useRef(
+    <>
+      <h1>anjay</h1>
+    </>
+  );
+
+  const clickHandle = () => {
+    console.log(counter.current.render());
+  };
+  /**
+   *
+   * @param {String} a we will not walk alone
+   * @param {String} b
+   */
+  const cunhold = (a, b) => {};
+
   return (
     <div>
-      <Container></Container>
-      <Wrapper></Wrapper>
+      {console.log("im clicked")}
+      <button onClick={clickHandle}>click me</button>
     </div>
   );
 };
