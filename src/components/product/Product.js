@@ -29,7 +29,7 @@ const Product = ({
     max-width: 16.667%;
   `;
   const ContainerLayer1 = styled.div`
-    position: relative;
+    /* position: relative; */
     background-color: #ffffff;
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -45,12 +45,12 @@ const Product = ({
     box-sizing: border-box;
   `;
   const ContainerLayer2 = styled.div`
-    position: relative;
+    /* position: relative; */
     border-radius: 8px;
     min-width: 100%;
   `;
   const ContainerLayer3 = styled.div`
-    position: relative;
+    /* position: relative; */
     flex: 0.5 1 0%;
     z-index: 1;
     height: 100%;
@@ -71,14 +71,14 @@ const Product = ({
   `;
   const ContainerLayer5 = styled.div`
     display: flex;
-    position: static;
+    /* position: static; */
     overflow: visible;
     background-color: #ffffff;
     flex-flow: column nowrap;
     height: 100%;
   `;
   const ImageContainer = styled.div`
-    position: relative;
+    /* position: relative; */
     display: block;
     margin: 0px;
     height: 0px;
@@ -87,7 +87,7 @@ const Product = ({
   `;
 
   const Img = styled.div`
-    position: relative;
+    /* position: relative; */
     opacity: 1;
     border: 0px;
     margin: 0px;
@@ -109,7 +109,7 @@ const Product = ({
     margin: 0px auto;
   `;
   const DescContainer = styled.div`
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex: 1 1 0%;
     flex-direction: column;
@@ -208,7 +208,7 @@ const Product = ({
     line-height: 18px;
     margin-bottom: 4px;
     i {
-      position: relative;
+      /* position: relative; */
       display: flex;
       flex: 0 0 16px;
       height: 16px;
@@ -271,7 +271,7 @@ const Product = ({
     overflow: hidden;
   `;
   const RatingStar = styled.i`
-    position: relative;
+    /* position: relative; */
     display: inline-block;
     vertical-align: middle;
     width: 16px;
@@ -308,6 +308,14 @@ const Product = ({
     white-space: nowrap;
     overflow: hidden;
   `;
+  const Tirai = styled.div`
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    background-color: black;
+    top: -100px;
+  `;
   const Badge = (type) => {
     switch (type) {
       case "PRO":
@@ -319,54 +327,58 @@ const Product = ({
     }
   };
   return (
-    <ContainerLayer0>
-      <ContainerLayer1>
-        <ContainerLayer2>
-          <ContainerLayer3>
-            <ContainerLayer4>
-              <ContainerLayer5>
-                <ImageContainer>
-                  <Img>
-                    <Imgs src={img} />
-                  </Img>
-                </ImageContainer>
-                <DescContainer>
-                  <Desc>
-                    <Title>{title}</Title>
-                    <Price>${price}</Price>
+    <>
+      <ContainerLayer0>
+        <ContainerLayer1>
+          <ContainerLayer2>
+            <ContainerLayer3>
+              <ContainerLayer4>
+                <ContainerLayer5>
+                  <ImageContainer>
+                    <Img>
+                      <Imgs src={img} />
+                    </Img>
+                  </ImageContainer>
+                  <DescContainer>
+                    <Desc>
+                      <Title>{title}</Title>
+                      <Price>${price}</Price>
 
-                    {discount ? (
-                      <Discount>
-                        <div className="discount">{discount}</div>
-                        <div className="price">${price * (discount / 100)}</div>
-                      </Discount>
-                    ) : (
-                      <Cashback>Free Delivery</Cashback>
-                    )}
+                      {discount ? (
+                        <Discount>
+                          <div className="discount">{discount}</div>
+                          <div className="price">
+                            ${price * (discount / 100)}
+                          </div>
+                        </Discount>
+                      ) : (
+                        <Cashback>Free Delivery</Cashback>
+                      )}
 
-                    <SellerInfo>
-                      {Badge(badge)}
-                      <SellerNameUndLocation>
-                        <SellerLocation>
-                          <div>{location}</div>
-                          <div>{sellerName}</div>
-                        </SellerLocation>
-                      </SellerNameUndLocation>
-                    </SellerInfo>
-                  </Desc>
-                  <RatingUndSellingWrapper>
-                    <RatingStar />
-                    <Ratings>{ratings}</Ratings>
-                    <Divider />
-                    <Selling>Selling {selling}</Selling>
-                  </RatingUndSellingWrapper>
-                </DescContainer>
-              </ContainerLayer5>
-            </ContainerLayer4>
-          </ContainerLayer3>
-        </ContainerLayer2>
-      </ContainerLayer1>
-    </ContainerLayer0>
+                      <SellerInfo>
+                        {Badge(badge)}
+                        <SellerNameUndLocation>
+                          <SellerLocation>
+                            <div>{location}</div>
+                            <div>{sellerName}</div>
+                          </SellerLocation>
+                        </SellerNameUndLocation>
+                      </SellerInfo>
+                    </Desc>
+                    <RatingUndSellingWrapper>
+                      <RatingStar />
+                      <Ratings>{ratings}</Ratings>
+                      <Divider />
+                      <Selling>Selling {selling}</Selling>
+                    </RatingUndSellingWrapper>
+                  </DescContainer>
+                </ContainerLayer5>
+              </ContainerLayer4>
+            </ContainerLayer3>
+          </ContainerLayer2>
+        </ContainerLayer1>
+      </ContainerLayer0>
+    </>
   );
 };
 

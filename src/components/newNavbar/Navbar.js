@@ -292,9 +292,8 @@ const Bottom = () => {
     }
   `;
   const DropdownDisabler = styled.div`
-    /* background-color: rgba(0, 0, 0, 0.7); */
-    background-color: black;
-    /* opacity: 0.6; */
+    background-color: rgba(0, 0, 0, 0.7);
+
     position: fixed;
     inset: 110px 0px 0px;
     top: 110px;
